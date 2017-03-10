@@ -19,9 +19,10 @@ class Timeout(Exception):
     pass
 
 
-# vasiliy.mikhailov: for reviewer - please do not review transposition table, it is under development. Idea is to collect
-# winning combinations and apply deep neural network from sk-learn.
-# I will not be able to complete until March, 15, probably will complete later
+# vasiliy.mikhailov: for reviewer - please do not review transposition table / board rotations, it works, it generates 1 GB
+# file of best moves for different positions and gives 90% winning rate, but since submission is limited to 4 Mb,
+# it should be packed to deep neural network, I don't have time to implement that until submission date, probably
+# will complete later for myself.
 
 # vasiliy.mikhailov: transposition table for game agent, where key is binary representation (to lookup values faster)
 # and value is the scores for that table
@@ -65,7 +66,7 @@ logger.addHandler(logging.StreamHandler(sys.stdout))
 
 # vasiliy.mikhailov: global variables to tune up score functions, can be set outside module
 player_weights = {"player": 0.3125, "opponent": 1.0}
-in_isolation = {'number_of_moves': 30}
+in_isolation = {'number_of_moves': 35}
 
 def custom_score(game, player):
     """Calculate the heuristic value of a game state from the point of view

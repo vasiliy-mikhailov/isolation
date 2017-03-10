@@ -163,7 +163,7 @@ def main():
         player_weights["opponent"] = float(sys.argv[2])
 
     if len(sys.argv) >= 4:
-        in_isolation["number_of_moves"] = float(sys.argv[3])
+        in_isolation["number_of_moves"] = int(sys.argv[3])
 
     HEURISTICS = [("Null", null_score),
                   ("Open", open_move_score),
